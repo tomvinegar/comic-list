@@ -3,7 +3,10 @@
     <head>
     </head>
     <body>
-        <div id="content"></div>
+        <div id="content">git 
+            <div id="collection"></div>
+            <h2>Lookkng for...</h2>
+        </div>
         <script>
          // create array of vol1 issues i want 
         let issues = [];
@@ -13,8 +16,8 @@
 
         const collection = [147, 171, 173, 175, 185, 187, 190, 193, 209, 210, 214, 218, 219, 220, 223, 224, 225, 226, 228, 230, 231, 232, 233, 235, 236, 237, 238, 240, 241, 242, 243, 246, 247, 250, 252, 254, 255, 258, 259]; 
         const seeking = issues.filter(item => !collection.includes(item));
-       
-        document.getElementById("content").innerHTML = seeking.join("<br>");
+        document.getElementById("collection").innerHTML = `have ${collection.length +1} issues; looking for ${seeking.length +1}`;
+        document.getElementById("content").innerHTML += seeking.join("<br>");
         </script>
     </body>
 </html>
