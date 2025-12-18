@@ -3,23 +3,42 @@
     <head>
     </head>
     <body>
-        <div id="content"> 
-            <div id="collection"></div>
-            <h2>Lookkng for...</h2>
-        </div>
+        <h2>Regular Issues</h2>
+        <hr>
+        <div id="standard_collection"></div>
+        <h2>Annuals</h2>
+        <hr>
+        <div id="annual_collection"></div>
+        
         <script>
          // create array of vol1 issues i want 
         let issues = [];
-        for (i = 144; i < 262; i++) {
+        for (i = 165; i < 244; i++) {
             issues.push(i);
         }
 
-        const collection = [147, 165, 166, 167, 171, 173, 175, 185, 187, 190, 193, 205, 209, 210, 211, 212, 213, 214, 217, 
-             218, 219, 220, 223, 224, 225, 226, 228, 230, 231, 232, 233, 235, 236, 237, 238, 240, 241, 242, 243, 246, 247, 250, 
-            252, 254, 255, 258, 259]; 
+        const collection = [147, 
+            165, 166, 167, 
+            171, 173, 175, 176, 177, 178, 179, 
+            180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 
+            190, 191, 192,  193, 194, 195, 196, 197, 198, 199, 
+            200, 201, 205, 209, 
+            210, 211, 212, 213, 214, 217, 218, 219, 
+            220, 223, 224, 225, 226, 228, 
+            230, 231, 232, 233, 235, 236, 237, 238, 240, 241, 242, 243, 246, 247, 
+            250,  252, 254, 255, 258, 259]; 
         const seeking = issues.filter(item => !collection.includes(item));
-        document.getElementById("collection").innerHTML = `have ${collection.length +1} issues; looking for ${seeking.length +1}`;
-        document.getElementById("content").innerHTML += seeking.join("<br>");
+        document.getElementById("standard_collection").innerHTML = `have ${collection.length} issues; looking for ${seeking.length}<br>`;
+        document.getElementById("standard_collection").innerHTML += seeking.join("<br>");
+
+        //annuals and specials
+        let annuals = Array.from({length: 7}, (_, index) => index + 6); 
+       
+        const annual_collection = [7, 8, 10, 12];
+
+        const seeking_annuals  = annuals.filter(item => !annual_collection.includes(item));
+        document.getElementById("annual_collection").innerHTML = `have ${annual_collection.length} issues; looking for ${seeking_annuals.length}<br>`;
+        document.getElementById("annual_collection").innerHTML += seeking_annuals.join("<br>");
         </script>
     </body>
 </html>
